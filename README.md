@@ -1,7 +1,6 @@
 # HITMAN - Networking
-Various Scripts from [Swixel](github.com/awstanley) for dealing with HITMAN's networking.
+Various Scripts relating to dealing with HITMAN's networking, some are sourced from [Swixel](github.com/awstanley)
 
-###To Do
 * Figure out how to generate a token or method that doesn't deprecate.
     * May need to automate JWT token creation.
     
