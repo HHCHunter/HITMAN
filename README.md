@@ -7,3 +7,5 @@ Various Scripts relating to dealing with HITMAN's networking, some are sourced f
 * Create script to get leaderboard JSON from Contract ID.
 
 * Parse JSON data into Javascript for [Kotti's](https://github.com/TheKotti) website to read.
+
+Disclaimer: Not to be used for piracy or un-authorized access to servers.
