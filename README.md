@@ -5,8 +5,7 @@ Written for Python 2.xx
 
 ## TO DO
 
-* Figure out how to generate a token or method that doesn't deprecate.
+* Figure out how to generate a token.json automatically or make a method that doesn't deprecate.
     * May need to automate JWT token creation instead.
-
 
 ### Disclaimer: Not to be used for piracy or un-authorized access to servers.
