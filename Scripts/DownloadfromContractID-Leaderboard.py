@@ -10,7 +10,7 @@ with open("token.json", "r") as f:
     token = JD.decode(data)
 	
 #Need to figure out how to make the contract ID change-able?	
-path = " https://pc-service.hitman.io/profiles/page//leaderboardentries?contractid=%s&page=0 HTTP/1.1" % contractID
+path = " https://pc-service.hitman.io/profiles/page//leaderboardentries?contractid=%s&page=0" % contractID
 req = urllib.request(
     url=path
 )
