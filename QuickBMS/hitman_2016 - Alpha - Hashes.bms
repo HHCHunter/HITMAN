@@ -1,0 +1,76 @@
+# Hitman 2016 (script 0.2.5)
+# script for QuickBMS http://quickbms.aluigi.org
+
+math IS_BETA = 0
+
+comtype lz4
+idstring "GKPR"
+get FILES long
+if FILES == 0
+    math IS_BETA = 1
+    goto 0x1c
+    get FILES long
+endif
+get INFO_OFF long
+get INFO_SIZE long
+get NAME basename
+if NAME & "patch"
+    get NUM long
+    for x = 0 < NUM
+        get DUMMY longlong
+    next x
+else
+    get ZERO long
+    if ZERO != 0
+        goto -4 0 SEEK_CUR
+    endif
+endif
+savepos TMP
+math INFO_OFF + TMP
+log MEMORY_FILE2 INFO_OFF INFO_SIZE
+for i = 0 < FILES
+    get HASH longlong
+    get OFFSET longlong
+    if IS_BETA == 0
+        get ZSIZE long
+    else
+        math ZSIZE = 0
+    endif
+
+    getdstring TYPE 4 MEMORY_FILE2
+    get CHUNK_INFO_SIZE long MEMORY_FILE2
+    get CHUNK_SIZE long MEMORY_FILE2
+    get SIZE long MEMORY_FILE2
+    get MEM_SIZE long MEMORY_FILE2
+    get VIDEO_MEM_SIZE long MEMORY_FILE2
+    savepos TMP MEMORY_FILE2
+    if IS_BETA == 0
+        if CHUNK_INFO_SIZE >= 4
+            get CHUNKS long MEMORY_FILE2
+            math CHUNKS & 0x3fffffff
+            for x = 0 < CHUNKS
+                get DUMMY long MEMORY_FILE2
+                get DUMMY long MEMORY_FILE2
+            next x
+        endif
+    endif
+    math TMP + CHUNK_INFO_SIZE
+    goto TMP MEMORY_FILE2
+
+    string TYPE r TYPE
+    string NAME p "%s/" TYPE
+
+    # uncomment if you want to use the Hitman_Hashes.list file of Ekey
+    namecrc NAME HASH "Hitman_Hashes.list" 64
+
+    if ZSIZE & 0x80000000
+        encryption xor "\xdc\x45\xa6\x9c\xd3\x72\x4c\xab"
+    endif
+    math ZSIZE & 0x3fffffff
+    if ZSIZE != 0
+        clog NAME OFFSET ZSIZE SIZE
+    else
+        log NAME OFFSET SIZE
+    endif
+    encryption "" ""
+next i
