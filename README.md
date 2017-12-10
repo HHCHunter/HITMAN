@@ -6,3 +6,6 @@ Disclaimer: Not to be used for piracy or un-authorized access to servers.
 
 ## Fileformats
 Useful to understand what folders when extracted are what.
+
+## QuickBMS
+Scripts and Hashlist to be used with QuickBMS
