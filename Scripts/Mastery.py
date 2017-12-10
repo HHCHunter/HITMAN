@@ -47,7 +47,7 @@ def doLocation(loc):
     req.add_header('Accept','application/json')
     req.add_header('Content-Type', 'application/json')
     req.add_header('User-Agent','G2 Http/1.0')
-    req.add_header('Version','6.70.0')
+    req.add_header('Version','6.71.0')
 
     r = urllib2.urlopen(req,
         timeout=5
