@@ -1,4 +1,4 @@
-# HITMAM Tools
+# HITMAN Tools
 
 ## Networking
 Various Scripts relating to dealing with HITMAN's networking, some are sourced from [Swixel](github.com/awstanley)
