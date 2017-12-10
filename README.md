@@ -12,5 +12,5 @@ Written for Python 3.xx
 
 ### Disclaimer: Not to be used for piracy or un-authorized access to servers.
 
-## FILEFORMATS
+## Fileformats
 Useful to understand what folders when extracted are what.
