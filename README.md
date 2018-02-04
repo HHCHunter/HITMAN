@@ -6,10 +6,10 @@ Various Scripts relating to dealing with HITMAN's networking, some are sourced f
 Disclaimer: Not to be used for piracy or un-authorized access to servers.
 
 ## h6xxtea
-This is used to make changes to HITMAN's engine configuration file. For unknown reasons IOI decided to encypt this file, which is actually useful for people who want to make extended configuration changes beyond that of the ingame settings.
+This is used to decrypt thumbs.dat for editing and re-encrypt it for the engine to use after editing. The thumbs.dat file is HITMAN's engine configuration file. For unknown reasons IOI decided to encypt this file, which is a useful file for people who want to make extended configuration changes beyond that of ingame settings.
 
 ## Fileformats
-Useful to understand what folders when extracted are what.
+This is a useful for beginers to understand what is inside of folders that are extracted by QuickBMS.
 
 ## QuickBMS
 Scripts and Hashlist to be used with QuickBMS
