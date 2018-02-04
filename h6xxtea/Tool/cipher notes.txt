@@ -1,0 +1,145 @@
+/*
+// This is what I know thus far; it should be clean.
+// It has to be done in bytes otherwise UTF-8 gets all weird.
+//
+// Once I got about 20 done I saw the pattern, making this redundant...
+// Though I needed a lot more than 20 to confirm it, mercifully I had 55
+// using simple substitution to confirm word probability using n-grams,
+// digraphs, trigraphs, and UTF-8 modifier clusters.
+func initCipherKey() map[byte]byte {
+	m := make(map[byte]byte)
+
+	m[0xA4] = byte(` `[0]) // 0x20 = 0xA4
+	m[0xF4] = byte(`,`[0])
+	m[0xF5] = byte(`-`[0])
+	m[0xF0] = byte(`.`[0])
+	// 0 - 3
+	m[0xB6] = byte(`4`[0])
+	// 5
+	// 6
+	m[0xB3] = byte(`7`[0])
+	// 8
+	// 9
+	m[0xE2] = byte(`:`[0]) // 0x3A = 0xE2
+
+	// Group of 15 - masks on 5th bit
+	//m[0x85] = byte(`a`[0])/ 0x61 | 1100001 || 10000101
+	m[0x8D] = byte(`A`[0]) // 0x41 | 1000001 || 10001101    | xor 11001100 (204) || 1100
+	m[0x88] = byte(`B`[0]) // 0x42 | 1000010 || 10001000    | xor 11001010 (202) ||  110
+	m[0x89] = byte(`C`[0]) // 0x43 | 1000011 || 10001001    | xor 11001010 (202) ||  110
+	m[0x9C] = byte(`D`[0]) // 0x44 | 1000100 || 10011100    | xor 11011000 (216) || 1000
+	m[0x9D] = byte(`E`[0]) // 0x45 | 1000101 || 10011101    | xor 11011000 (216) || 1000
+	m[0x98] = byte(`F`[0]) // 0x46 | 1000110 || 10011000    | xor 11011110 (222) ||   10
+	m[0x99] = byte(`G`[0]) // 0x47 | 1000111 || 10011001    | xor 11011110 (222) ||   10
+	m[0xCC] = byte(`H`[0]) // 0x48 | 1001000 || 11001100    | xor 10000100 (132) ||  100
+	m[0xCD] = byte(`I`[0]) // 0x49 | 1001001 || 11001101    | xor 10000100 (132) ||  100
+	m[0xC8] = byte(`J`[0]) // 0x4A | 1001010 || 11001000
+	m[0xC9] = byte(`K`[0]) // 0x4B | 1001011 || 11001001
+	m[0xDC] = byte(`L`[0]) // 0x4C | 1001100 ||
+	m[0xDD] = byte(`M`[0]) // 0x4D | 1001101 ||
+	m[0xD8] = byte(`N`[0]) // 0x4E | 1001110 ||
+	m[0xD9] = byte(`O`[0]) // 0x4F | 1001111 ||
+
+	// Group of 11
+	m[0x8E] = byte(`P`[0]) // 0x50 | 1010000 || 10001110    - vs. p [ 01110000 || 10000110 ]
+	m[0x8F] = byte(`Q`[0]) // 0x51 | 1010001 || 10001111
+	m[0x8A] = byte(`R`[0]) // 0x52 | 1010010 || 10001010
+	m[0x8B] = byte(`S`[0]) // 0x53 | 1010011 || 10001011
+	m[0x9E] = byte(`T`[0])
+	m[0x9F] = byte(`U`[0])
+	m[0x9A] = byte(`V`[0])
+	m[0x9B] = byte(`W`[0]) // - jumps from S as expected
+	m[0xCE] = byte(`X`[0])
+	m[0xCF] = byte(`Y`[0])
+	m[0xCA] = byte(`Z`[0])
+
+	// Splits here (group of 15)
+	// Doesn't have 5th bit or 7th
+	m[0x85] = byte(`a`[0]) // 0x61 | 1100001 || 10000101
+	m[0x80] = byte(`b`[0]) // 0x62 | 1100010 || 10000000
+	m[0x81] = byte(`c`[0])
+	m[0x94] = byte(`d`[0])
+	m[0x95] = byte(`e`[0]) // 0x65 = 0x95 (+0xF)   | 1100101
+	m[0x90] = byte(`f`[0])
+	m[0x91] = byte(`g`[0])
+	m[0xC4] = byte(`h`[0])
+	m[0xC5] = byte(`i`[0]) // 0x69 = 0xC5 (+0xF)
+	m[0xC0] = byte(`j`[0])
+	m[0xC1] = byte(`k`[0])
+	m[0xD4] = byte(`l`[0])
+	m[0xD5] = byte(`m`[0]) // 0x6D = 0xD5 (+0xF)
+	m[0xD0] = byte(`n`[0])
+	m[0xD1] = byte(`o`[0]) // 0x6F = 0xD1          | 1101111
+
+	// Doesn't have 7th bit
+	// Should mask on the 5th bit
+	m[0x86] = byte(`p`[0]) // 0x70 | 1110000 || 10000110
+	m[0x87] = byte(`q`[0])
+	m[0x82] = byte(`r`[0])
+	m[0x83] = byte(`s`[0])
+	m[0x96] = byte(`t`[0]) // jumps from p, as expected...
+	m[0x97] = byte(`u`[0]) // jumps from q, as expected...
+	m[0x92] = byte(`v`[0])
+	m[0x93] = byte(`w`[0])
+	m[0xC6] = byte(`x`[0])
+	m[0xC7] = byte(`y`[0]) // jumps from y, as expected...
+	m[0xC2] = byte(`z`[0]) // jumps from v
+
+	// Following ords:
+	// {
+	// |
+	// }
+
+	// -- These also look messy, but they match the memory dumps I gathered.
+	// Typically UTF-8 related, or other non-English ASCII; the non-English languages
+	// actually patched the missing English text values (J, etc.).
+	// They should be right, but if you know the language and the output is
+	// all kinds of messed up, file an issue with where and what it should be.
+	m[0x2D] = byte(0x81)
+	m[0x31] = byte(0xA7)
+	m[0x32] = byte(0xB6)
+
+	m[0x34] = byte(0xA4)
+	//
+	//
+	//
+	// -
+	//
+	//
+	//
+	m[0x3C] = byte(0x84) // - jumps from 0xA4 as expected ...
+
+	m[0x60] = byte(0xAA)
+	m[0x65] = byte(0xA9)
+	m[0x6D] = byte(0x89)
+
+	// 1 - // could be BD?
+	// 2
+	// 3
+	m[0x74] = byte(0xAC)
+	m[0x75] = byte(0xAD) //
+	m[0x76] = byte(0xBC)
+	// 7
+	// 8
+	// 9 - probably 0x9D
+	// A
+	// B
+	// C
+	m[0x7D] = byte(0x8D) // jumps from 0xAD as expected
+
+	m[0xA4] = byte(0x20) // Yes, it's a space.
+
+	// The same pattern repeats here.
+	m[0x09] = byte(0xC3) // 0xC3 = 0x09
+	m[0x23] = byte(0xB3) // 0xB3 = 0x22
+	m[0x24] = byte(0xA0) // 0xA0 = 0x24
+	m[0x25] = byte(0xA1) // 0xA1 = 0x25
+
+	// Exception?
+	m[0x20] = byte(0xA2) // 0xA2 = 0x20
+
+	// As we increment 2 bytes on the ciphered side we drop 0x0F.
+
+	return m
+}
+*/
