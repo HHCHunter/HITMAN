@@ -12,4 +12,4 @@ This is used to decrypt thumbs.dat for editing and re-encrypt it for the engine 
 This is a useful for beginers to understand what is inside of folders that are extracted by QuickBMS.
 
 ## QuickBMS
-Scripts and Hashlist to be used with QuickBMS
+Scripts and Hashlist to be used with QuickBMS. This is used to extract the game archives.
