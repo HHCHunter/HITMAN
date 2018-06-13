@@ -2,7 +2,7 @@ AIBB <- AI BehaviorTreeEntityBlueprint
 AIBX <- AI BehaviorTreeEntityType
 AIBZ <- AI CompiledBehaviorTreeResource
 AIRG <- AI ReasoningGridResource
-ALOC <- Physics / PhyX RELATED DATA
+ALOC <- Physics / PhysX
 ASEB <- AspectEntityBlueprint
 ASET <- AspectEntityType
 ASVA <- AnimSetVariation
@@ -37,7 +37,7 @@ MRTR <- RIG
 NAVP <- NavpowerNavmesh
 ORES <- ONLINE RESOURCES
 PRIM <- MODELS / RenderPrimitive
-REPO <- REPOSITORY FILES, USED FOR INDEXING.
+REPO <- REPOSITORY FILE
 RTLV <- RuntimeLocalizedVideo
 SCDA <- ScatterData
 SCTX <- ScatterTexture
