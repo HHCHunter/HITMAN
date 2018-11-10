@@ -1,10 +1,10 @@
 # HITMAN Tools
 
 ## Fileformats
-This is useful for beginers to understand what is inside folders once they have been extracted by QuickBMS.
+This is useful for beginners to understand what is inside folders once they have been extracted by QuickBMS.
 
 ## Networking
-Various Scripts relating to dealing with HITMAN's networking, some are sourced from [Swixel](https://github.com/swixel).
+Various scripts relating to dealing with HITMAN's networking, some are sourced from [Swixel](https://github.com/swixel).
 These are un-maintained and the server version mentioned in the script may change.
 
 Disclaimer: Not to be used for piracy or un-authorized access to servers.
