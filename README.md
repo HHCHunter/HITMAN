@@ -25,7 +25,7 @@ Original source from Xentax User [cippyboy](https://github.com/cippyboy)
 The thumbs.dat file is HITMAN's engine configuration file. 
 h6xxtea is used to decrypt the thumbs.dat file for editing and re-encrypt for later engine use.
 
-For unknown reasons IOI decided to encrypt this file with xxtea encyption. Not sure why this was done as the file is useful for people who want to make extended configuration changes beyond that of' the limited in-game menu settings.
+For unknown reasons IOI decided to encrypt this file with xxtea encyption. Not sure why this was done as the file is useful for people who want to make extended configuration changes beyond that of the limited in-game menu settings.
 
 ## Licensing & Use
 This repo is licensed under GNU GPL V3, however crediting use of these tools would be appreciated. :)
