@@ -11,10 +11,17 @@ Disclaimer: Not to be used for piracy or un-authorized access to servers.
 
 ## QuickBMS
 Scripts and Hashlist to be used with QuickBMS. This is used to extract the game archives.
+Originally written by Aluigi & the team at Zenhax.
 
 ## Textures
-Used to convert HITMAN's textures to Direct Draw Surfaces. Original source from Xentax User [https://github.com/cippyboy](cippyboy)
-
+Used to convert HITMAN's textures to Direct Draw Surfaces. 
+Original source from Xentax User [https://github.com/cippyboy](cippyboy)
 
 ## h6xxtea
-This is used to decrypt thumbs.dat for editing and re-encrypt it for the engine to use after editing. The thumbs.dat file is HITMAN's engine configuration file. For unknown reasons IOI decided to encypt this file, which is a useful file for people who want to make extended configuration changes beyond that of in-game settings.
+The thumbs.dat file is HITMAN's engine configuration file. 
+h6xxtea is used to decrypt the thumbs.dat file for editing and re-encrypt later for engine use.
+
+For unknown reasons IOI decided to encrypt this file with xxtea encyption. Not sure why this was done as the file is useful for people who want to make extended configuration changes beyond that of' the limited in-game menu settings.
+
+## LICENSE & USE
+This repo is licensed under GNU GPL V3, however crediting use of these tools would be appreciated. :)
