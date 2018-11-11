@@ -16,4 +16,4 @@
 1. Use the ENCRYPT thumbs.bat batch file.
 
 ## ENGINE USE
-1. Replace your un-modified thumbs.dat
+1. Replace your un-modified thumbs.dat with your modified file.
