@@ -5,7 +5,7 @@ FILE LOCATION
 
 DECRYPTION
 
-1. Drag your thumbs.dat into the Tool folder.
+1. Copy your thumbs.dat into the Tool folder.
 2. Use the DECRYPT thumbs.bat batch file.
 3. The Tool will then export a plaintext thumbs.txt file for modification.
 
