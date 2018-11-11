@@ -11,7 +11,7 @@
 #include "stdafx.h"
 #include <string>
 #include <stdio.h>
-#include < Windows.h >
+#include <windows.h>
 
 //Include program specific headers.
 #include "G2TexConv.h"
