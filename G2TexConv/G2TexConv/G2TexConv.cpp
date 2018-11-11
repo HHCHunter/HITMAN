@@ -272,7 +272,7 @@ struct INT16_3 {
 
 int main(int argc, const char ** arg) {
 	if (argc != 3) {
-		printf("Must give 2 paramaters ! first is input folder (Usually a TEXD Directory), second is output folder\n");
+		printf("Must give 2 paramaters, with no spaces in file locations ! first is input folder (Usually the extracted TEXD folder), second is output folder (Usually a EXPORT Folder)\n");
 		printf("Usage\nHitman_2016.exe input_folder output_folder\n");
 		printf("Example\nHitman_2016.exe Extract\\TEXD Extract\\TEXD\\Out\n");
 		//return -1;
