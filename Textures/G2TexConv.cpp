@@ -1,5 +1,6 @@
 // Hitman_2016.cpp : Defines the entry point for the console application.
-//
+// Originally written by Cippyboy of Xentax Forum.
+// Refractor done by HHCHunter to remove 3D Model support & update detection.
 
 #include "stdafx.h"
 
@@ -20,8 +21,7 @@ UINT EnableVSync = 0;//RE stupid dependency
 #include <vector>
 #include <string>
 
-#include "Hitman_2016.h"
-
+#include "G2TexConv.h"
 
 void GetFilesInFolder( DYNAMIC_ARRAY<RE_STRING*> & List, const char *Folder, char *Filter )
 {
@@ -53,7 +53,7 @@ void GetFilesInFolder( DYNAMIC_ARRAY<RE_STRING*> & List, const char *Folder, cha
 	}
 	FindClose( Handle );
 }
-// GetMipSize is selected from header file.h
+// GetMipSize from G2TexConv.h
 int GetMipSize( TEXTURE_INFO Info )
 {
 	int x = Info.Width;
@@ -549,7 +549,7 @@ int main( int argc, const char **arg)
 {
 	if ( argc != 3 )
 	{
-		printf( "Must give 2 params ! first is input folder (Usually a TEXD Directory), second is output folder\n" );
+		printf( "Must give 2 paramaters ! first is input folder (Usually a TEXD Directory), second is output folder\n" );
 		printf( "Usage\nHitman_2016.exe input_folder output_folder\n" );
 		printf( "Example\nHitman_2016.exe Extract\\TEXD Extract\\TEXD\\Out\n" );
 		//return -1;
@@ -558,4 +558,3 @@ int main( int argc, const char **arg)
 	ExtractModels();
     return 0;
 }
-
