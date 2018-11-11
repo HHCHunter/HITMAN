@@ -1,4 +1,4 @@
-Instructions.
+# Instructions.
 
 FILE LOCATION
 1. The thumbs.dat file is located: ...\Retail
