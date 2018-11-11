@@ -165,8 +165,7 @@ void ExtractTextures(const char * InFolder, const char * OutFolder) {
 	InFolder2 += "\\";
 
 	DYNAMIC_ARRAY < RE_STRING * > TextureList;
-	//char * InFolder = "E:\\Downloads\\Downloaded Torrents\\GMT-MAX.ORG_Hitman_2016_Steam-Rip\\Hitman\\Runtime\\Extract\\TEXD\\";
-	//char * InFolder = "C:\\Hitman_2016_Steam-Rip\\\Hitman\\Runtime\\Extract\\TEXD\\";
+	//char * InFolder = "DRIVELETTER:\\FOLDER\\";
 
 	//Gets all files that have the extension ".vap", needs to also support ".dat" files, as they are also texture files as well.
 	GetFilesInFolder(TextureList, InFolder2.c_str(), "*.vap");
