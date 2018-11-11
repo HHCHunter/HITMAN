@@ -22,7 +22,6 @@ Work in Progress tool used to convert Glacier 2 Engine textures to Direct Draw S
 Original source from Xentax User [cippyboy](https://github.com/cippyboy)
 
 Needs refractoring to remove dependacy on cippboy's RE* files.
-Need to implement std:string.
 
 ## h6xxtea
 The thumbs.dat file is HITMAN's engine configuration file. 
