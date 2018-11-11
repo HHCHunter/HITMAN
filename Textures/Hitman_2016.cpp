@@ -53,7 +53,7 @@ void GetFilesInFolder( DYNAMIC_ARRAY<RE_STRING*> & List, const char *Folder, cha
 	}
 	FindClose( Handle );
 }
-
+// GetMipSize is selected from header file.h
 int GetMipSize( TEXTURE_INFO Info )
 {
 	int x = Info.Width;
