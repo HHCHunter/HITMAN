@@ -1,5 +1,8 @@
 # HITMAN Tools
 
+Is a collection of tools useful for the HITMAN™ / Glacier 2 engine games.
+The pupose of this archive is to keep these tools open source and up-to date as the Glacier 2 engine is continually developped.
+
 ## Fileformats
 This is useful for beginners to understand what is inside folders once they have been extracted by QuickBMS.
 
