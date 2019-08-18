@@ -7,6 +7,7 @@ ASEB <- AspectEntityBlueprint
 ASET <- AspectEntityType
 ASVA <- AnimSetVariation
 ATMD <- AMD
+BLOB <- ResourceBlob
 BMSK <- BoneMask
 BORG <- AnimationBoneData
 CBLU <- CppEntityBlueprint
@@ -15,8 +16,10 @@ CPPT <- CppEntityType
 CRMD <- CrowdMapDataResource
 DITL <- DialogSoundTemplateList
 DLGE <- DialogEvent
-ERES <- EntityResource
+ECPB <- ExtendedCppEntityBlueprint
+ECPT <- ExtendedCppEntityType
 ENUM <- EnumType
+ERES <- EntityResource
 FXAC <- ACTOR
 FXAS <- ANIMATION SET
 GFXF <- SCALEFORM FLASH ARCHIVES FOR FLASH / SCALEFORM
@@ -24,18 +27,20 @@ GFXI <- SCALEFORM IMAGES
 GFXV <- SCALEFORM VIDEO / USM/CRI 
 GIDX <- GLOBAL RESOURCES IDX
 HIKC <- HIKCharacter
+IMAP <- IDMap
 JSON <- JSON RESOURCE
 LINE <- TEXTLINE
 LOCR <- LOCALIZATION LANGUAGE / TEXT
 MATB <- RENDER MATERIAL EntityBlueprint
-MATE <- RENDER MATERIAL EFFECT
-MATI <- RENDER MATERIAL INSTANCE
-MATT <- RENDER MATERIAL ENTITY TYPE
-MJBA <- 
+MATE <- RENDER MATERIAL Effect
+MATI <- RENDER MATERIAL Instance
+MATT <- RENDER MATERIAL EntityType
+MJBA <- Animation
 MRTN <- Network
 MRTR <- RIG
 NAVP <- NavpowerNavmesh
 ORES <- ONLINE RESOURCES
+PREL <- Preload
 PRIM <- MODELS / RenderPrimitive
 REPO <- REPOSITORY FILE
 RTLV <- RuntimeLocalizedVideo
@@ -43,12 +48,12 @@ SCDA <- ScatterData
 SCTX <- ScatterTexture
 SDEF <- SoundAmbienceDefs
 TBLU <- TemplateBlueprint
-TEMP <- Template
 TELI <- TextList
+TEMP <- Template
 TEXD <- DummyTextureData / DDS TEXTURES
 TEXT <- RenderTexture / MORE DDS TEXTURES
 UICB <- UIControl
-UICD <-
+UICD <- UIControl
 UICT <- UIControl
 VIDB <- VideoDatabaseResource
 VTXD <- VertexData
